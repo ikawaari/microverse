@@ -1,36 +1,40 @@
 function serviceLane(n, cases) {
   // Write your code here
 
-  let widest = []; // input width
-  for (let i = 0; i < cases.length; i++) {
-    console.log("Segment 1 ******");
-    // let segments = [];
-    let start = cases[i][0];
-    let end = cases[i][1];
+  function serviceLane(n, cases) {
+    // Write your code here
 
-    // console.log("start :" + start);
-    // console.log("end :" + end)
+    console.log("n : " + n);
 
-    let w = 0;
-    for (let j = start; j <= end; j++) {
-      if (w === 0) {
-        w = n[j];
-      } else if (n[j] < w) {
-        w = n[j];
+    let widest = []; // input width
+    for (let i = 0; i < cases.length; i++) {
+      // let segments = [];
+      let start = cases[i][0];
+      let end = cases[i][1];
+
+      // console.log("start :" + start);
+      // console.log("end :" + end)
+
+      let w = 0;
+      for (let j = start; j <= end; j++) {
+        console.log(j);
+        // segments.push(n[j]);
+        if (w === 0) {
+          w = n[j];
+        } else if (n[j] < w) {
+          w = n[j];
+        }
       }
 
-      console.log(j);
+      widest.push(w);
 
-      // segments.push(n[j]);
+      // console.log(widest);
     }
 
-    widest.push(w);
+    return widest;
 
-    // console.log(widest);
+    // console.log(segments);
   }
-
-  console.log(widest);
-
   //   console.log(segments);
 }
 serviceLane(
